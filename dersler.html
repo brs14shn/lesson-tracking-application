@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="dersler.css" />
+    <title>Ders Takip Uygulaması</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Ders Takip Uygulaması</h1>
+      <div id="date"><span id="date-span"></span></div>
+      <div id="lessons-table"></div>
+      <button onclick="openAddLessonModal()">Ders Ekle</button>
+    </div>
+
+    <div id="add-lesson-modal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeAddLessonModal()">&times;</span>
+        <h2>Ders Ekle</h2>
+        <form onsubmit="handleAddLessonForm(); return false;">
+          <label for="lesson-name">Ders Adı:</label>
+          <input type="text" id="lesson-name" required />
+
+          <label for="lesson-credit">Kredi:</label>
+          <input type="number" id="lesson-credit" required />
+
+          <label for="lesson-examdate">Sınav Tarihi:</label>
+          <input type="date" id="lesson-examdate" required />
+
+          
+          <label for="lesson-average-grade">Not Ortalaması:</label>
+          <input type="number" id="lesson-average-grade" required />
+
+          <label for="lesson-category">Kategori:</label>
+          <input type="text" id="lesson-category" required />
+
+
+          <label for="progress-bar">İlerleme Durumu:</label>
+          <input type="number" id="progress-bar" min="0" max="100" required />
+
+          <label for="law-read">Mevzuat Okunma Durumu:</label>
+          <input type="checkbox" id="law-read" name="lawRead" />
+
+          <label for="practice-solved">Pratik Çözme Durumu:</label>
+          <input type="checkbox" id="practice-solved" name="practiceSolved" />
+
+          <label for="exam-solved">Çıkmış Soru Çözme Durumu:</label>
+          <input type="checkbox" id="exam-solved" name="examSolved" />
+
+          <label for="last-topic">Son Kalınan Konu veya Sayfa:</label>
+          <input type="text" id="last-topic" name="lastTopic" />
+
+          <button type="submit">Ekle</button>
+        </form>
+      </div>
+    </div>
+
+    <div id="lesson-detail-modal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeLessonDetailModal()">&times;</span>
+        <div id="lesson-detail-content"></div>
+      </div>
+    </div>
+    <!-- Edit Lesson Modal -->
+    <div id="edit-lesson-modal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeEditLessonModal()">&times;</span>
+        <h2>Ders Düzenle</h2>
+        <form id="edit-lesson-form">
+          <label for="lesson-name">Ders Adı:</label>
+          <input type="text" id="lesson-name" required />
+
+          <label for="lesson-credit">Kredi:</label>
+          <input type="number" id="lesson-credit" required />
+
+          <label for="lesson-examdate">Sınav Tarihi:</label>
+          <input type="date" id="lesson-examdate" required />
+        
+          <label for="lesson-average-grade">Not Ortalaması:</label>
+          <input type="number" id="lesson-average-grade" required />
+
+          <label for="lesson-category">Kategori:</label>
+          <input type="text" id="lesson-category" required />
+
+          <label for="progress-bar">İlerleme Durumu:</label>
+          <input type="number" id="progress-bar" min="0" max="100" required />
+
+          <label for="law-read">Mevzuat Okunma Durumu:</label>
+          <input type="checkbox" id="law-read" name="lawRead" />
+
+          <label for="practice-solved">Pratik Çözme Durumu:</label>
+          <input type="checkbox" id="practice-solved" name="practiceSolved" />
+
+          <label for="exam-solved">Çıkmış Soru Çözme Durumu:</label>
+          <input type="checkbox" id="exam-solved" name="examSolved" />
+
+          <label for="last-topic">Son Kalınan Konu veya Sayfa:</label>
+          <input type="text" id="last-topic" name="lastTopic" />
+
+          <button type="button" onclick="handleEditLessonForm()">Kaydet</button>
+        </form>
+      </div>
+    </div>
+
+    <script src="dersler.js"></script>
+  </body>
+</html>
